@@ -3,6 +3,8 @@ import MapScene from '@/components/home/MapScene';
 import useInfo from '@/hooks/useInfo';
 import { Info } from '@/types/info';
 import { useEffect } from 'react';
+//seo 적용하기
+import { NextSeo } from 'next-seo';
 
 interface IProps {
   infos: Info[];
@@ -21,6 +23,10 @@ export default function Home({ infos }: IProps) {
   }, [infos, initializeInfos]);
   return (
     <>
+      <NextSeo
+        title="건강검진센터 위치 서비스"
+        description="건강검진 센터 위치 서비스 입니다. "
+      />
       <Header />
       <MapScene />
     </>
